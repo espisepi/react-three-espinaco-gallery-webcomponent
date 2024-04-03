@@ -3,9 +3,11 @@ import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@react-three/drei'
-import { useRoute, useLocation } from 'wouter'
+// import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
+import useNavigationStore from './navigationStore'; // Asume que el archivo se llama navigationStore.js
+
 
 const GOLDENRATIO = 1.61803398875
 
@@ -38,10 +40,14 @@ export const App = ({ images }) => (
 function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }) {
   const ref = useRef()
   const clicked = useRef()
-  const [, params] = useRoute('/item/:id')
-  const [, setLocation] = useLocation()
+  // const [, params] = useRoute('/item/:id')
+  const location = useNavigationStore((state) => state.location); // Usamos el hook de Zustand aquí
+  const navigate = useNavigationStore((state) => state.navigate); // Usamos el hook de Zustand aquí
+
+  // const [, setLocation] = useLocation()
+
   useEffect(() => {
-    clicked.current = ref.current.getObjectByName(params?.id)
+    clicked.current = ref.current.getObjectByName(location)
     if (clicked.current) {
       clicked.current.parent.updateWorldMatrix(true, true)
       clicked.current.parent.localToWorld(p.set(0, GOLDENRATIO / 2, 1.25))
@@ -58,8 +64,8 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
   return (
     <group
       ref={ref}
-      onClick={(e) => (e.stopPropagation(), setLocation(clicked.current === e.object ? '/' : '/item/' + e.object.name))}
-      onPointerMissed={() => setLocation('/')}>
+      onClick={(e) => (e.stopPropagation(), navigate(clicked.current === e.object ? '/' : e.object.name))}
+      onPointerMissed={() => navigate('/')}>
       {images.map((props) => <Frame key={props.url} {...props} /> /* prettier-ignore */)}
     </group>
   )
@@ -68,11 +74,12 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
 function Frame({ url, c = new THREE.Color(), ...props }) {
   const image = useRef()
   const frame = useRef()
-  const [, params] = useRoute('/item/:id')
+  // const [, params] = useRoute('/item/:id')
+  const location = useNavigationStore((state) => state.location); // Usamos el hook de Zustand aquí
   const [hovered, hover] = useState(false)
   const [rnd] = useState(() => Math.random())
   const name = getUuid(url)
-  const isActive = params?.id === name
+  const isActive = location === name
   useCursor(hovered)
   useFrame((state, dt) => {
     image.current.material.zoom = 2 + Math.sin(rnd * 10000 + state.clock.elapsedTime / 3) / 2
