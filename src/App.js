@@ -71,14 +71,14 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
   )
 }
 
-function Frame({ url, c = new THREE.Color(), ...props }) {
+function Frame({ url, c = new THREE.Color(), name, description, price, urlpdp, ...props }) {
   const image = useRef()
   const frame = useRef()
   // const [, params] = useRoute('/item/:id')
   const location = useNavigationStore((state) => state.location); // Usamos el hook de Zustand aquí
   const [hovered, hover] = useState(false)
   const [rnd] = useState(() => Math.random())
-  const name = getUuid(url)
+  // const name = getUuid(url)
   const isActive = location === name
   useCursor(hovered)
   useFrame((state, dt) => {
@@ -86,6 +86,13 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
     easing.damp3(image.current.scale, [0.85 * (!isActive && hovered ? 0.85 : 1), 0.9 * (!isActive && hovered ? 0.905 : 1), 1], 0.1, dt)
     easing.dampC(frame.current.material.color, hovered ? 'orange' : 'white', 0.1, dt)
   })
+
+  const handleClickPdp = () => {
+    if(isActive) {
+      // Especifica la URL a la que quieres redirigir
+      window.location.href = urlpdp;
+    }
+  };
   return (
     <group {...props}>
       <mesh
@@ -102,8 +109,17 @@ function Frame({ url, c = new THREE.Color(), ...props }) {
         </mesh>
         <Image raycast={() => null} ref={image} position={[0, 0, 0.7]} url={url} />
       </mesh>
-      <Text maxWidth={0.1} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
-        {name.split('-').join(' ')}
+      <Text maxWidth={0.5} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO, 0]} fontSize={0.025}>
+        {name}
+      </Text>
+      <Text maxWidth={0.5} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO - 0.1, 0]} fontSize={0.025}>
+        {description}
+      </Text>
+      <Text maxWidth={0.5} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO - 0.2, 0]} fontSize={0.025}>
+        {price}
+      </Text>
+      <Text onClick={handleClickPdp} maxWidth={0.5} anchorX="left" anchorY="top" position={[0.55, GOLDENRATIO - 0.3, 0]} fontSize={0.025}>
+        Ir a la pagina del producto
       </Text>
     </group>
   )
