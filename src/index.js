@@ -1,4 +1,5 @@
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client';
 import './styles.css'
 import { App } from './App'
 
@@ -19,4 +20,22 @@ const images = [
   { position: [2, 0, 2.75], rotation: [0, -Math.PI / 2.5, 0], url: pexel(1738986) }
 ]
 
-createRoot(document.getElementById('root')).render(<App images={images} />)
+// createRoot(document.getElementById('root')).render(<App images={images} />)
+
+// Microfrontend hecho a partir del tutorial:
+// https://tekinico.medium.com/build-a-react-embeddable-widget-c46b7f7999d8
+// https://github.com/nicoraynaud/react-widget
+
+// Find all widget divs
+const widgetDivs = document.querySelectorAll('.ultimate-react-three-espinaco, #ultimate-react-three-espinaco');
+
+// Inject our React App into each class
+widgetDivs.forEach(div => {
+  const root = ReactDOM.createRoot(div);
+  console.log(div?.dataset?.symbol);
+  root.render(
+    <React.StrictMode>
+      <App images={images} />
+    </React.StrictMode>
+  );
+});
