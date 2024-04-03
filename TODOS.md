@@ -1,0 +1,2 @@
+ - OK: Eliminar router y replicar la misma funcionalidad con zustand
+ - TODO: Añadir atributos del producto tipicos de shopify para mostrarlos en la escena threejs junto a la imagen
