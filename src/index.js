@@ -27,7 +27,7 @@ const images = [
 // https://github.com/nicoraynaud/react-widget
 
 // Find all widget divs
-const widgetDivs = document.querySelectorAll('.ultimate-react-three-espinaco, #ultimate-react-three-espinaco');
+const widgetDivs = document.querySelectorAll('.sepinaco-gallery-webcomponent, #sepinaco-gallery-webcomponent');
 
 // Inject our React App into each class
 widgetDivs.forEach(div => {

@@ -2,3 +2,4 @@
  - OK: Añadir atributos del producto tipicos de shopify para mostrarlos en la escena threejs junto a la imagen
  - TODO: Testear Gallery threejs webcomponent tiempo de carga en template shopify
  - OK: Poner script para crear componente desde js en el proyecto
+ - TODO: Crear proyecto html,css,vanillajs para poner todos los web components que vaya creando como este. Y eso sera lo que presentare a los clientes. En cada componente web hago referencia en un txt a su repositorio.

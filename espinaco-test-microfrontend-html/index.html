@@ -20,7 +20,7 @@
 
         * MENOS IMPORTANTE: Se obtuvo el error "Cannot find module '@babel/plugin-proposal-private-property-in-object' " al hacer yarn build y se soluciono añadiendo las dependencias de @babel en devDependencies del package.json. Solucion gracias a https://stackoverflow.com/questions/56356521/cannot-find-module-babel-plugin-proposal-class-properties-reactspring-boot
 
-        Tutorial para que funcione la app microfrontend ultimate-react-three-espinaco:
+        Tutorial para que funcione la app microfrontend sepinaco-gallery-webcomponent:
         1 - Irse a la carpeta raiz (donde se encuentra el package.json) y ejecutar el comando yarn build:widget
         2 - Irse a la carpeta widget, y dentro ejecutar el comando serve para servir la pagina estatica (npm install -g serve)
         3 - Dentro de esta carpeta (espinaco-test-html) Ejecutar el comando serve para servir la pagina estatica 
@@ -31,7 +31,7 @@
     <h1> Metodo 1: Crear html en el propio html </h1>
 
     <div
-    id="ultimate-react-three-espinaco"
+    class="sepinaco-gallery-webcomponent"
     style="width:100%;height:100vh"
     data-items='[
     {
@@ -211,7 +211,10 @@
       let div = document.createElement('div');
 
       // Establecer el ID del div
-      div.id = 'ultimate-react-three-espinaco';
+      // div.id = 'sepinaco-gallery-webcomponent';
+
+      // Añadir una clase con el mismo nombre del ID al div
+      div.classList.add('sepinaco-gallery-webcomponent');
 
       // Establecer el estilo del div
       div.style.width = '100%';
@@ -237,8 +240,6 @@
 
     </script>
 
-
-    <!-- <div class="ultimate-react-three-espinaco" data-symbol="https://www.youtube.com/watch?v=ZelTFpXStE8"></div> -->
 
     <!-- /!\ Only add these two tags once per page -->
     <link href="http://localhost:3000/index.css" rel="stylesheet" />
