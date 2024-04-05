@@ -1,3 +1,12 @@
+
+- Para hacer build y probar el widget:
+ - yarn build
+ - yarn build:widget
+ - cd widget && serve
+ - cd espinaco-test-microfrontend-html && serve
+
+============================
+
 Cuando añado este json string a json.parse() no me convierte los array a tipo array, sino que los deja como string. Yo quiero que los convierta a array: [
   {
       "src": "https://www.educaciontrespuntocero.com/wp-content/uploads/2019/10/music-978x652.jpg",
