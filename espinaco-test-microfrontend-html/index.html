@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>espianco-test-html</title>
+    <title>espinaco-test-webcomponent-react-widget</title>
 </head>
 
 <body>
@@ -26,6 +26,9 @@
         3 - Dentro de esta carpeta (espinaco-test-html) Ejecutar el comando serve para servir la pagina estatica 
 
     -->
+
+    <!-- Metodo 1: Crear html en el propio html -->
+    <h1> Metodo 1: Crear html en el propio html </h1>
 
     <div
     id="ultimate-react-three-espinaco"
@@ -113,6 +116,127 @@
       "url": "https://images.pexels.com/photos/1738986/pexels-photo-1738986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
     }
     ]'></div>
+
+    <!-- Metodo 2: Crear html mediante codigo js -->
+    <h1> Metodo 2: Crear html mediante codigo js </h1>
+    <div class="container-sepinaco-gallery-webcomponent"></div>
+    <script>
+      let dataItems = [
+        {
+            "name": "Producto 1",
+            "description": "Descripcion producto 1",
+            "price": "10€",
+            "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+            "position": "[0, 0, 1.5]",
+            "rotation": "[0, 0, 0]",
+            "url": "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+            "name": "Producto 2",
+            "description": "Descripcion producto 2",
+            "price": "26€",
+            "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+            "position": "[-0.8, 0, -0.6]",
+            "rotation": "[0, 0, 0]",
+            "url": "https://images.pexels.com/photos/416430/pexels-photo-416430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 3",
+          "description": "Descripcion producto 3",
+          "price": "36€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[0.8, 0, -0.6]",
+          "rotation": "[0, 0, 0]",
+          "url": "https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 4",
+          "description": "Descripcion producto 4",
+          "price": "46€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[-1.75, 0, 0.25]",
+          "rotation": "[0, 1.26, 0]",
+          "url": "https://images.pexels.com/photos/327482/pexels-photo-327482.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 5",
+          "description": "Descripcion producto 5",
+          "price": "56€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[-2.15, 0, 1.5]",
+          "rotation": "[0, 1.26, 0]",
+          "url": "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 6",
+          "description": "Descripcion producto 6",
+          "price": "66€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[-2, 0, 2.75]",
+          "rotation": "[0, 1.26, 0]",
+          "url": "https://images.pexels.com/photos/358574/pexels-photo-358574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 7",
+          "description": "Descripcion producto 7",
+          "price": "76€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[1.75, 0, 0.25]",
+          "rotation": "[0, -1.26, 0]",
+          "url": "https://images.pexels.com/photos/227675/pexels-photo-227675.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 8",
+          "description": "Descripcion producto 8",
+          "price": "86€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[2.15, 0, 1.5]",
+          "rotation": "[0, -1.26, 0]",
+          "url": "https://images.pexels.com/photos/911738/pexels-photo-911738.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        },
+        {
+          "name": "Producto 9",
+          "description": "Descripcion producto 9",
+          "price": "96€",
+          "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
+          "position": "[2, 0, 2.75]",
+          "rotation": "[0, -1.26, 0]",
+          "url": "https://images.pexels.com/photos/1738986/pexels-photo-1738986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+        }
+      ];
+
+      // Comienza la creacion del componente html
+
+      // Crear el elemento div
+      let div = document.createElement('div');
+
+      // Establecer el ID del div
+      div.id = 'ultimate-react-three-espinaco';
+
+      // Establecer el estilo del div
+      div.style.width = '100%';
+      div.style.height = '100vh';
+
+      let dataItemsString = JSON.stringify(dataItems);
+
+      // Asignar los datos de los ítems al atributo 'data-items' del div
+      div.setAttribute('data-items', dataItemsString);
+
+      // Encontrar el contenedor por su clase
+      let container = document.querySelector('.container-sepinaco-gallery-webcomponent');
+
+      // Verificar si el contenedor existe
+      if(container) {
+          // Agregar el div creado al contenedor encontrado
+          container.appendChild(div);
+      } else {
+          console.log('No se encontró el contenedor con la clase especificada. Added to body :) ');
+          // Agregar el div al cuerpo del documento
+          document.body.appendChild(div);
+      }
+
+    </script>
+
 
     <!-- <div class="ultimate-react-three-espinaco" data-symbol="https://www.youtube.com/watch?v=ZelTFpXStE8"></div> -->
 

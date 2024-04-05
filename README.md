@@ -2,7 +2,7 @@
 - Para hacer build y probar el widget:
  - yarn build
  - yarn build:widget
- - cd widget && serve
+ - cd widget && serve (Asegurarse que se despliega en puerto 3000)
  - cd espinaco-test-microfrontend-html && serve
 
 ============================
