@@ -1,2 +1,4 @@
  - OK: Eliminar router y replicar la misma funcionalidad con zustand
- - TODO: Añadir atributos del producto tipicos de shopify para mostrarlos en la escena threejs junto a la imagen
+ - OK: Añadir atributos del producto tipicos de shopify para mostrarlos en la escena threejs junto a la imagen
+ - TODO: Testear Gallery threejs webcomponent tiempo de carga en template shopify
+ - TODO: Poner script para crear componente desde js en el proyecto
