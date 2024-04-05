@@ -32,6 +32,8 @@ const widgetDivs = document.querySelectorAll('.sepinaco-gallery-webcomponent, #s
 // Inject our React App into each class
 widgetDivs.forEach(div => {
   const root = ReactDOM.createRoot(div);
+
+  // get data-items attribute ==================
   const itemsString = div?.dataset?.items;
   const items = JSON.parse(itemsString);
   // Convert String "[0,0,0]" => Array [0,0,0]
@@ -39,8 +41,18 @@ widgetDivs.forEach(div => {
     item.position = JSON.parse(item.position);
     item.rotation = JSON.parse(item.rotation);
   });
-  console.log(itemsString);
-  console.log(items);
+
+  // get data-debug attribute ==================
+  const debugString = div?.dataset?.debug;
+  const debug = debugString === "true";
+  console.log("Sepinaco Gallery WebComponent Debug mode: ", debug);
+
+  // Show logs if debug is true
+  if(debug) {
+    console.log(itemsString);
+    console.log(items);
+  }
+
   root.render(
     <React.StrictMode>
       <App images={items} />

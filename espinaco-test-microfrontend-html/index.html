@@ -33,6 +33,7 @@
     <div
     class="sepinaco-gallery-webcomponent"
     style="width:100%;height:100vh"
+    data-debug="false"
     data-items='[
     {
         "name": "Producto 1",
@@ -224,6 +225,9 @@
 
       // Asignar los datos de los ítems al atributo 'data-items' del div
       div.setAttribute('data-items', dataItemsString);
+
+      // Asignar atributo debug
+      div.setAttribute('data-debug', "false");
 
       // Encontrar el contenedor por su clase
       let container = document.querySelector('.container-sepinaco-gallery-webcomponent');
