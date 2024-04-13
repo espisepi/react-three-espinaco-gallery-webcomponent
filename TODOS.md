@@ -4,3 +4,7 @@
  - OK: Poner script para crear componente desde js en el proyecto
  - OK (https://github.com/espisepi/sepinaco-webcomponents): Crear proyecto html,css,vanillajs para poner todos los web components que vaya creando como este. Y eso sera lo que presentare a los clientes. En cada componente web hago referencia en un txt a su repositorio.
  - TODO (ADDED README4 y README5): anadir evento que se ejecuta cuando termina de cargar la escena para asi controlar una pantalla de carga o poner pantalla de carga
+
+ - TODO: Añadir en script el poder insertar el canvas threejs en un elemento dato, como hijo de ese elemento en la posicion que yo le pase por parametro (posicion 1, 2...)
+
+ 

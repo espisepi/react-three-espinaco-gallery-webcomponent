@@ -55,8 +55,7 @@ widgetDivs.forEach(div => {
 
   root.render(
     <React.StrictMode>
-      <App images={items} />
-      {/* <App images={images} /> */}
+      <App items={items} />
     </React.StrictMode>
   );
 });

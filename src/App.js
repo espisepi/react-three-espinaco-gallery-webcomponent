@@ -11,12 +11,12 @@ import useNavigationStore from './navigationStore'; // Asume que el archivo se l
 
 const GOLDENRATIO = 1.61803398875
 
-export const App = ({ images }) => (
+export const App = ({ items }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
     <color attach="background" args={['#191920']} />
     <fog attach="fog" args={['#191920', 0, 15]} />
     <group position={[0, -0.5, 0]}>
-      <Frames images={images} />
+      <Frames images={items} />
       <mesh rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry args={[50, 50]} />
         <MeshReflectorMaterial
@@ -91,6 +91,8 @@ function Frame({ url, c = new THREE.Color(), name, description, price, urlpdp, .
     if(isActive) {
       // Especifica la URL a la que quieres redirigir
       window.location.href = urlpdp;
+      // Para abrirlo en segunda ventana descomentar el codigo de abajo
+      // window.open(urlpdp, '_blank');
     }
   };
   return (

@@ -122,6 +122,7 @@
     <h1> Metodo 2: Crear html mediante codigo js </h1>
     <div class="container-sepinaco-gallery-webcomponent"></div>
     <script>
+      let containerQuerySelector = '.wp-block-group-is-layout-constrained';
       let dataItems = [
         {
             "name": "Producto 1",
@@ -130,7 +131,7 @@
             "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
             "position": "[0, 0, 1.5]",
             "rotation": "[0, 0, 0]",
-            "url": "https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            "url": "https://www.ensasport.com/1684313979328/wp-content/uploads/2023/06/ENSA9-2-1024x1024.jpg"
         },
         {
             "name": "Producto 2",
@@ -139,7 +140,7 @@
             "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
             "position": "[-0.8, 0, -0.6]",
             "rotation": "[0, 0, 0]",
-            "url": "https://images.pexels.com/photos/416430/pexels-photo-416430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+            "url": "https://www.ensasport.com/1684313979328/wp-content/uploads/2023/06/ENSA9-2-1024x1024.jpg"
         },
         {
           "name": "Producto 3",
@@ -218,7 +219,7 @@
       div.classList.add('sepinaco-gallery-webcomponent');
 
       // Establecer el estilo del div
-      div.style.width = '100%';
+      div.style.width = '100vw';
       div.style.height = '100vh';
 
       let dataItemsString = JSON.stringify(dataItems);
@@ -230,7 +231,7 @@
       div.setAttribute('data-debug', "false");
 
       // Encontrar el contenedor por su clase
-      let container = document.querySelector('.container-sepinaco-gallery-webcomponent');
+      let container = document.querySelector(containerQuerySelector);
 
       // Verificar si el contenedor existe
       if(container) {
@@ -250,12 +251,14 @@
       // link.rel = "stylesheet"; // El atributo rel
 
       // // Crear el elemento <script> para el JavaScript
-      // let script = document.createElement("script");
+      let script = document.createElement("script");
       // script.src = "http://localhost:3000/index.js"; // La URL del archivo JavaScript
+      script.src = "https://sepinaco-webcomponents.vercel.app/webcomponents/gallery/index.js"; // La URL del archivo JavaScript
+
 
       // // Añadir los elementos creados al <head> de la página
-      // document.body.appendChild(link);
-      // document.body.appendChild(script);
+      // document.body.appendChild(link); // Para el CSS
+      document.body.appendChild(script); // Para el JS
 
     </script>
 
