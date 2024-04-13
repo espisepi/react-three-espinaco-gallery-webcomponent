@@ -122,7 +122,43 @@
     <h1> Metodo 2: Crear html mediante codigo js </h1>
     <div class="container-sepinaco-gallery-webcomponent"></div>
     <script>
-      let containerQuerySelector = '.wp-block-group-is-layout-constrained';
+
+      // Modificar si se quiere anadir en una posicion concreta
+      let childrenPosition = 0; // dejar el valor en 0 para no usarlo
+
+      // Container para agregar
+      let containerQuerySelector = '.container-sepinaco-gallery-webcomponent';
+      let container = document.querySelector(containerQuerySelector);
+
+      // Comienza la creacion del componente html
+      // Crear el elemento div
+      let div = document.createElement('div');
+
+      // Verificar si el contenedor existe
+      if(container) {
+          if(childrenPosition !== 0 && container.children.length >= childrenPosition) {
+            // Agregar el div creado al contenedor encontrado en la posicion indicada
+            container.insertBefore(div, container.children[childrenPosition]);
+          } else {
+            // Agregar el div creado al contenedor encontrado en la ultima posicion
+            container.appendChild(div);
+          }
+      } else {
+          console.log('No se encontró el contenedor con la clase especificada. Added to body :) ');
+          // Agregar el div al cuerpo del documento
+          document.body.appendChild(div);
+      }
+
+      // Establecer el ID del div
+      // div.id = 'sepinaco-gallery-webcomponent';
+
+      // Añadir una clase con el mismo nombre del ID al div
+      div.classList.add('sepinaco-gallery-webcomponent');
+
+      // Establecer el estilo del div
+      div.style.width = '100vw';
+      div.style.height = '100vh';
+
       let dataItems = [
         {
             "name": "Producto 1",
@@ -131,7 +167,7 @@
             "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
             "position": "[0, 0, 1.5]",
             "rotation": "[0, 0, 0]",
-            "url": "https://www.ensasport.com/1684313979328/wp-content/uploads/2023/06/ENSA9-2-1024x1024.jpg"
+            "url": "https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         },
         {
             "name": "Producto 2",
@@ -140,7 +176,7 @@
             "urlpdp": "https://www.nike.com/es/t/phantom-gx-2-elite-erling-haaland-botas-de-futbol-de-perfil-bajo-terreno-firme-mPR8Tw/HF6361-600",
             "position": "[-0.8, 0, -0.6]",
             "rotation": "[0, 0, 0]",
-            "url": "https://www.ensasport.com/1684313979328/wp-content/uploads/2023/06/ENSA9-2-1024x1024.jpg"
+            "url": "https://images.pexels.com/photos/310452/pexels-photo-310452.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         },
         {
           "name": "Producto 3",
@@ -207,21 +243,6 @@
         }
       ];
 
-      // Comienza la creacion del componente html
-
-      // Crear el elemento div
-      let div = document.createElement('div');
-
-      // Establecer el ID del div
-      // div.id = 'sepinaco-gallery-webcomponent';
-
-      // Añadir una clase con el mismo nombre del ID al div
-      div.classList.add('sepinaco-gallery-webcomponent');
-
-      // Establecer el estilo del div
-      div.style.width = '100vw';
-      div.style.height = '100vh';
-
       let dataItemsString = JSON.stringify(dataItems);
 
       // Asignar los datos de los ítems al atributo 'data-items' del div
@@ -230,18 +251,7 @@
       // Asignar atributo debug
       div.setAttribute('data-debug', "false");
 
-      // Encontrar el contenedor por su clase
-      let container = document.querySelector(containerQuerySelector);
 
-      // Verificar si el contenedor existe
-      if(container) {
-          // Agregar el div creado al contenedor encontrado
-          container.appendChild(div);
-      } else {
-          console.log('No se encontró el contenedor con la clase especificada. Added to body :) ');
-          // Agregar el div al cuerpo del documento
-          document.body.appendChild(div);
-      }
 
       // Descomentar para Anadir los scripts mediante codigo js ====================
 
@@ -251,14 +261,14 @@
       // link.rel = "stylesheet"; // El atributo rel
 
       // // Crear el elemento <script> para el JavaScript
-      let script = document.createElement("script");
+      // let script = document.createElement("script");
       // script.src = "http://localhost:3000/index.js"; // La URL del archivo JavaScript
-      script.src = "https://sepinaco-webcomponents.vercel.app/webcomponents/gallery/index.js"; // La URL del archivo JavaScript
+      // script.src = "https://sepinaco-webcomponents.vercel.app/webcomponents/gallery/index.js"; // La URL del archivo JavaScript
 
 
       // // Añadir los elementos creados al <head> de la página
       // document.body.appendChild(link); // Para el CSS
-      document.body.appendChild(script); // Para el JS
+      // document.body.appendChild(script); // Para el JS
 
     </script>
 
