@@ -11,3 +11,6 @@
 1.5 - El paso anterior creara una carpeta widget en la raiz del proyecto
 2 - Irse a la carpeta widget, y dentro ejecutar el comando serve para servir la app microfrontend (los ficheros js y css constituyen la app) (npm install -g serve)
 3 - Dentro de esta carpeta (espinaco-test-html) Ejecutar el comando serve para servir la pagina estatica
+
+IMPORTANTE PARA WEB COMPONENTS YA CREADOS
+- Ejecutar serve en ./webcomponents/gallery para levantar el js y css del gallery ya que en la carpeta widget puede haber otro componente web
