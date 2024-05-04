@@ -66,7 +66,7 @@ function Frames({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() })
       ref={ref}
       onClick={(e) => (e.stopPropagation(), navigate(clicked.current === e.object ? '/' : e.object.name))}
       onPointerMissed={() => navigate('/')}>
-      {images.map((props) => <Frame key={props.url} {...props} /> /* prettier-ignore */)}
+      {images.map((props, index) => <Frame key={`${index}-${props.url}`} {...props} /> /* prettier-ignore */)}
     </group>
   )
 }
