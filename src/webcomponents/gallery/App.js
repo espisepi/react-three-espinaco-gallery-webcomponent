@@ -6,7 +6,7 @@ import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@rea
 // import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
-import useNavigationStore from './navigationStore'; // Asume que el archivo se llama navigationStore.js
+import useNavigationStore from '../../navigationStore'; // Asume que el archivo se llama navigationStore.js
 
 
 const GOLDENRATIO = 1.61803398875
