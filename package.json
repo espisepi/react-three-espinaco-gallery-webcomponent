@@ -22,7 +22,8 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "start": "react-scripts start",
