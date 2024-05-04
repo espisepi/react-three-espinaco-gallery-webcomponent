@@ -6,12 +6,12 @@ import { useCursor, MeshReflectorMaterial, Image, Text, Environment } from '@rea
 // import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
-import useNavigationStore from '../store/navigationStore'; // Asume que el archivo se llama navigationStore.js
+import useNavigationStore from '../../store/navigationStore'
 
 
 const GOLDENRATIO = 1.61803398875
 
-export const App = ({ items }) => (
+export const CanvasGallery = ({ items }) => (
   <Canvas dpr={[1, 1.5]} camera={{ fov: 70, position: [0, 2, 15] }}>
     <color attach="background" args={['#191920']} />
     <fog attach="fog" args={['#191920', 0, 15]} />
