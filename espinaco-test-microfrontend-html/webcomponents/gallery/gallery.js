@@ -1,8 +1,12 @@
+
+// IMPORTANTE: Este valor tiene que ser el mismo que se puso en el index.js antes de hacer yarn widget del componente web
+let WEBCOMPONENT_QUERY_SELECTOR_NAME = 'sepinaco-gallery-webcomponent';
+ 
  // Modificar si se quiere anadir en una posicion concreta
  let childrenPosition = -1; // dejar el valor en -1 para no usarlo
 
  // Container para agregar
- let containerQuerySelector = '.container-sepinaco-gallery-webcomponent';
+ let containerQuerySelector = '.container-' + WEBCOMPONENT_QUERY_SELECTOR_NAME;
  let container = document.querySelector(containerQuerySelector);
 
  // Comienza la creacion del componente html
@@ -35,7 +39,7 @@
  // div.id = 'sepinaco-gallery-webcomponent';
 
  // Añadir una clase con el mismo nombre del ID al div
- div.classList.add('sepinaco-gallery-webcomponent');
+ div.classList.add(WEBCOMPONENT_QUERY_SELECTOR_NAME);
 
  // Establecer el estilo del div
  div.style.width = '100vw';

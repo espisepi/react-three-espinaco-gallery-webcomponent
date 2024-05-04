@@ -8,8 +8,10 @@ import { App } from './App'
 // https://tekinico.medium.com/build-a-react-embeddable-widget-c46b7f7999d8
 // https://github.com/nicoraynaud/react-widget
 
+const WEBCOMPONENT_QUERY_SELECTOR_NAME = 'sepinaco-gallery-webcomponent';
+
 // Find all widget divs
-const widgetDivs = document.querySelectorAll('.sepinaco-gallery-webcomponent, #sepinaco-gallery-webcomponent');
+const widgetDivs = document.querySelectorAll(`.${WEBCOMPONENT_QUERY_SELECTOR_NAME}, #${WEBCOMPONENT_QUERY_SELECTOR_NAME}`);
 
 // Inject our React App into each class
 widgetDivs.forEach(div => {
@@ -27,7 +29,7 @@ widgetDivs.forEach(div => {
   // get data-debug attribute ==================
   const debugString = div?.dataset?.debug;
   const debug = debugString === "true";
-  console.log("Sepinaco Gallery WebComponent Debug mode: ", debug);
+  console.log(WEBCOMPONENT_QUERY_SELECTOR_NAME + " Debug mode: ", debug);
 
   // Show logs if debug is true
   if(debug) {
