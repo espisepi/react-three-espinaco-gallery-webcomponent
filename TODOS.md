@@ -1,4 +1,6 @@
 
+Version actual del proyecto: v0.1
+
 La idea es crear web components para ponerlos en cualquier pagina web (incluido en los woocommerce que haga)
 
 
