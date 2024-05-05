@@ -11,7 +11,9 @@ La idea es crear web components para ponerlos en cualquier pagina web (incluido 
 
 - OK: Actualizar versiones de dependencias
 
-- TODO: Migrar el proyecto de create-react-app a vite: https://dev.to/henriquejensen/migrating-from-create-react-app-to-vite-a-quick-and-easy-guide-5e72
+- OK: Migrar el proyecto de create-react-app a vite: 
+  -- (elegido ganador) https://www.linkedin.com/pulse/accelerate-your-existing-react-project-vite-ranga-durai-zrxpc/
+  -- (outdated) https://dev.to/henriquejensen/migrating-from-create-react-app-to-vite-a-quick-and-easy-guide-5e72
 
 
 ====================================================================

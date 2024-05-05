@@ -1,0 +1,1 @@
+Aqui se escribe el codigo para insertar los webcomponents en cualquier aplicacion que permita ejecutar codigo js.
