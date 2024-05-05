@@ -4,11 +4,14 @@ Version actual del proyecto: v0.1
 La idea es crear web components para ponerlos en cualquier pagina web (incluido en los woocommerce que haga)
 
 
- - TODO: Convertir proyecto a Typescript
+ - OK: Convertir proyecto a Typescript
 
- - TODO: Ponerlo clean architecture para poder crear cualquier web componente pero solo compilando el codigo necesario para crear ese web componente y no todos los que esten definidos en el proyecto
+ - OK: Ponerlo clean architecture para poder crear cualquier web componente pero solo compilando el codigo necesario para crear ese web componente y no todos los que esten definidos en el proyecto
    -- Comprobar por el tamaño del js generado en la carpeta widget, que solo se añade ese webcomponent y no todos.
 
+- OK: Actualizar versiones de dependencias
+
+- TODO: Migrar el proyecto de create-react-app a vite: https://dev.to/henriquejensen/migrating-from-create-react-app-to-vite-a-quick-and-easy-guide-5e72
 
 
 ====================================================================
