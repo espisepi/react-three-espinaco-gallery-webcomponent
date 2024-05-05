@@ -3,7 +3,6 @@ import * as THREE from 'three'
 import { useEffect, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { useCursor, MeshReflectorMaterial, Image, Text, Environment, ImageProps } from '@react-three/drei'
-// import { useRoute, useLocation } from 'wouter'
 import { easing } from 'maath'
 import getUuid from 'uuid-by-string'
 import useNavigationStore from '../../store/navigationStore'
@@ -54,11 +53,8 @@ interface FramesProps {
 const Frames: React.FC<FramesProps>  = ({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }) => {
   const ref = useRef<THREE.Group>()
   const clicked = useRef<THREE.Object3D<THREE.Object3DEventMap> | undefined>()
-  // const [, params] = useRoute('/item/:id')
   const location = useNavigationStore((state) => state.location); // Usamos el hook de Zustand aquí
   const navigate = useNavigationStore((state) => state.navigate); // Usamos el hook de Zustand aquí
-
-  // const [, setLocation] = useLocation()
 
   useEffect(() => {
     if(ref.current) {
@@ -95,7 +91,6 @@ interface FrameProps extends GalleryItem {
 const Frame: React.FC<FrameProps>  = ({ url, c = new THREE.Color(), name, description, price, urlpdp, ...props }) => {
   const image = useRef<THREE.Mesh>()
   const frame = useRef<THREE.Mesh>()
-  // const [, params] = useRoute('/item/:id')
   const location = useNavigationStore((state) => state.location); // Usamos el hook de Zustand aquí
   const [hovered, hover] = useState(false)
   const [rnd] = useState(() => Math.random())
