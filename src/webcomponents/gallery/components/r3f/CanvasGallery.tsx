@@ -53,7 +53,7 @@ interface FramesProps {
 
 const Frames: React.FC<FramesProps>  = ({ images, q = new THREE.Quaternion(), p = new THREE.Vector3() }) => {
   const ref = useRef<THREE.Group>()
-  const clicked = useRef<THREE.Object3D<THREE.Event> | undefined>()
+  const clicked = useRef<THREE.Object3D<THREE.Object3DEventMap> | undefined>()
   // const [, params] = useRoute('/item/:id')
   const location = useNavigationStore((state) => state.location); // Usamos el hook de Zustand aquí
   const navigate = useNavigationStore((state) => state.navigate); // Usamos el hook de Zustand aquí
