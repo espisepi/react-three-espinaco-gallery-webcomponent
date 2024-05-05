@@ -7,6 +7,12 @@
 
 ============================
 
+
+// Microfrontend hecho a partir del tutorial:
+// https://tekinico.medium.com/build-a-react-embeddable-widget-c46b7f7999d8
+// https://github.com/nicoraynaud/react-widget
+
+
 Cuando añado este json string a json.parse() no me convierte los array a tipo array, sino que los deja como string. Yo quiero que los convierta a array: [
   {
       "src": "https://www.educaciontrespuntocero.com/wp-content/uploads/2019/10/music-978x652.jpg",
